@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.ef06ee4c.js",
-    "static/js/453.742bef9d.chunk.js": "/static/js/453.742bef9d.chunk.js",
-    "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.ef06ee4c.js.map": "/static/js/main.ef06ee4c.js.map",
-    "453.742bef9d.chunk.js.map": "/static/js/453.742bef9d.chunk.js.map"
+    "main.css": "/GithubAction-React-CICD-Testing/static/css/main.e6c13ad2.css",
+    "main.js": "/GithubAction-React-CICD-Testing/static/js/main.e8120092.js",
+    "static/js/453.742bef9d.chunk.js": "/GithubAction-React-CICD-Testing/static/js/453.742bef9d.chunk.js",
+    "index.html": "/GithubAction-React-CICD-Testing/index.html",
+    "main.e6c13ad2.css.map": "/GithubAction-React-CICD-Testing/static/css/main.e6c13ad2.css.map",
+    "main.e8120092.js.map": "/GithubAction-React-CICD-Testing/static/js/main.e8120092.js.map",
+    "453.742bef9d.chunk.js.map": "/GithubAction-React-CICD-Testing/static/js/453.742bef9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.ef06ee4c.js"
+    "static/js/main.e8120092.js"
   ]
 }
