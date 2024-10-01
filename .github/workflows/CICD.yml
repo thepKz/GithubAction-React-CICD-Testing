@@ -1,31 +1,21 @@
-name: Deploy React App to GitHub Pages
-
-on:
-  push:
-    branches: 
-      - main  # Chỉ kích hoạt khi có push vào nhánh main
-
+name: Build and Deploy
+on: [push]
+permissions:
+  contents: write
 jobs:
-  deploy:
-    runs-on: ubuntu-latest  # Chạy trên môi trường Ubuntu
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4  # Lấy mã nguồn từ repository
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          node-version: '20'  # Cài đặt Node.js phiên bản 20
-
-      - name: Install Dependencies
-        run: npm install  # Cài đặt các phụ thuộc
-
-      - name: Build the project
-        run: npm run build  # Biên dịch ứng dụng React
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.2.0
-        with:
-          branch: gh-pages # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
-          token: ${{ secrets.GITHUB_TOKEN }}
