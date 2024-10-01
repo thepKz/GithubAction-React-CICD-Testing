@@ -26,5 +26,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
-          branch: gh-pages  # Nhánh sẽ chứa nội dung trang web
-          folder: build  # Thư mục chứa các tệp đã biên dịch
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+          token: ${{ secrets.GITHUB_TOKEN }}
