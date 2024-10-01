@@ -60,9 +60,9 @@ This project uses GitHub Actions to automate the CI/CD process. Every time there
 
 See the `.github/workflows/ci.yml` file for details on the CI/CD configuration.
 
-## Contributing
+## Tools
 
-Contributions are welcome. Please open an issue or submit a pull request to suggest changes or improvements.
+You can view this project: https://github.com/actions/deploy-pages
 
 ## License
 
