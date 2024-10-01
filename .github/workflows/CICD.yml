@@ -1,0 +1,30 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches: 
+      - main  # Chỉ kích hoạt khi có push vào nhánh main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Chạy trên môi trường Ubuntu
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Lấy mã nguồn từ repository
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Cài đặt Node.js phiên bản 20
+
+      - name: Install Dependencies
+        run: npm install  # Cài đặt các phụ thuộc
+
+      - name: Build the project
+        run: npm run build  # Biên dịch ứng dụng React
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.2.0
+        with:
+          branch: gh-pages  # Nhánh sẽ chứa nội dung trang web
+          folder: build  # Thư mục chứa các tệp đã biên dịch
